@@ -2,9 +2,10 @@
   --primary-text-color: #757575;
   --secondary-text-color: #212121;
   --accent-color: #2196f3;
+  --accent-hover-color: #188ce8;
   --nav-text-color: #000000;
   --contacts-text-color: rgba(255, 255, 255, 0.6);
-  --primary-background-color: #ffffff;
+  --primary-bg-white-color: #ffffff;
   --secondary-background-color: #f5f4fa;
   --footer-background-color: #2f303a;
   --card-margin: 30px;
@@ -61,15 +62,13 @@ button {
 
 .visually-hidden {
   position: absolute;
-  white-space: nowrap;
   width: 1px;
   height: 1px;
-  overflow: hidden;
+  margin: -1px;
   border: 0;
   padding: 0;
   clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  margin: -1px;
+  overflow: hidden;
 }
 
 /* -------------Стили главной страницы-------------*/
@@ -237,12 +236,12 @@ button {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 
-  color: var(--primary-background-color);
+  color: var(--primary-bg-white-color);
 }
 
 /* -----------------HERO-BUTTON------------------- */
 
-.hero-button {
+.hero-btn {
   min-width: 200px;
   padding: 10px 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -254,19 +253,17 @@ button {
   line-height: 1.87;
   letter-spacing: 0.06em;
 
-  color: var(--primary-background-color);
+  color: var(--primary-bg-white-color);
   background-color: var(--accent-color);
 
-  transition: box-shadow var(--transition-duration) var(--timing-function);
+  transition: box-shadow var(--transition-duration) var(--timing-function),
+    background-color var(--transition-duration) var(--timing-function);
 }
 
-.hero-button:hover,
-.hero-button:focus {
+.hero-btn:hover,
+.hero-btn:focus {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background-image: linear-gradient(
-    rgba(47, 48, 58, 0.1),
-    rgba(47, 48, 58, 0.1)
-  );
+  background-color: var(--accent-hover-color);
 }
 
 /* --------------------MODAL-------------------- */
@@ -301,15 +298,21 @@ button {
   width: 528px;
   height: 581px;
 
-  background-color: var(--primary-background-color);
+  background-color: var(--primary-bg-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
+
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.9);
 }
-.modal-button {
+
+.modal {
+  padding: 40px;
+}
+
+.modal-btn {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -323,7 +326,7 @@ button {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
 
-  background-color: var(--primary-background-color);
+  background-color: var(--primary-bg-white-color);
 }
 
 .modal-icon {
@@ -333,6 +336,108 @@ button {
 
 .modal-icon:hover {
   fill: var(--accent-color);
+}
+
+.modal-heading {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+
+  color: var(--secondary-text-color);
+}
+
+.modal-field {
+  position: relative;
+}
+
+.modal-label {
+  display: block;
+  margin-bottom: 4px;
+
+  text-align: left;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  color: var(--primary-text-color);
+}
+
+.modal-input {
+  width: 448px;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 12px 16px;
+  padding-left: 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.modal-input-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.modal-textarea {
+  resize: none;
+  display: block;
+  width: 448px;
+  height: 120px;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.modal-textarea:placeholder-shown {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-text {
+  margin-bottom: 30px;
+  line-height: 1.71;
+
+  color: var(--primary-text-color);
+}
+
+.modal-link {
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--accent-color);
+}
+
+.modal-btn-submit {
+  width: 200px;
+  height: 50px;
+
+  border: none;
+  border-radius: 4px;
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color var(--transition-duration) var(--timing-function),
+    box-shadow var(--transition-duration) var(--timing-function);
+}
+
+.modal-btn-submit:hover,
+.modal-btn-submit:focus {
+  background-color: var(--accent-hover-color);
+}
+
+.modal-btn-text {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  text-align: center;
+  letter-spacing: 0.06em;
+
+  color: var(--primary-bg-white-color);
 }
 
 /* -------------------SECTIONS---------------------- */
@@ -417,7 +522,7 @@ button {
 
   text-transform: uppercase;
 
-  color: var(--primary-background-color);
+  color: var(--primary-bg-white-color);
 }
 
 /* -------------------TEAM---------------------- */
@@ -431,14 +536,14 @@ button {
 }
 
 .team-item {
-  background-color: var(--primary-background-color);
+  background-color: var(--primary-bg-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
 
 .team-card {
-  background-color: var(--primary-background-color);
+  background-color: var(--primary-bg-white-color);
 }
 
 .team-item:not(:last-child) {
@@ -492,7 +597,7 @@ button {
 
 .social-link:hover,
 .social-link:focus {
-  color: var(--primary-background-color);
+  color: var(--primary-bg-white-color);
   background-color: var(--accent-color);
 }
 
@@ -502,7 +607,7 @@ button {
 }
 
 .social-icon:hover {
-  fill: var(--primary-background-color);
+  fill: var(--primary-bg-white-color);
 }
 
 /* ----------------CLIENTS---------------------- */
@@ -556,7 +661,7 @@ button {
   margin-right: 8px;
 }
 
-.filter-button {
+.filter-btn {
   min-width: 73px;
   border: 0;
   border-radius: 4px;
@@ -574,12 +679,12 @@ button {
     box-shadow var(--transition-duration) var(--timing-function);
 }
 
-.filter-button:hover,
-.filter-button:focus {
+.filter-btn:hover,
+.filter-btn:focus {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 
-  color: var(--primary-background-color);
+  color: var(--primary-bg-white-color);
   background-color: var(--accent-color);
 }
 
@@ -637,7 +742,7 @@ button {
   font-size: 18px;
   line-height: 1.56;
 
-  color: var(--primary-background-color);
+  color: var(--primary-bg-white-color);
 }
 
 .project-title {
@@ -690,7 +795,7 @@ button {
 }
 
 .footer .link {
-  color: var(--primary-background-color);
+  color: var(--primary-bg-white-color);
 }
 
 .footer-link {
@@ -714,11 +819,11 @@ button {
   line-height: 1.14;
   text-transform: uppercase;
 
-  color: var(--primary-background-color);
+  color: var(--primary-bg-white-color);
 }
 
 .footer-social .social-link {
-  color: var(--primary-background-color);
+  color: var(--primary-bg-white-color);
   background-color: rgba(255, 255, 255, 0.1);
   transition: color var(--transition-duration) var(--timing-function),
     background-color var(--transition-duration) var(--timing-function);
@@ -726,6 +831,72 @@ button {
 
 .footer-social .social-link:hover,
 .footer-social .social-link:focus {
-  color: var(--primary-background-color);
+  color: var(--primary-bg-white-color);
   background-color: var(--accent-color);
+}
+
+.footer-subscribe {
+  margin-left: auto;
+}
+
+.footer-label {
+  display: block;
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+
+  color: var(--primary-bg-white-color);
+}
+
+.footer-input {
+  width: 358px;
+  height: 50px;
+  margin-right: 12px;
+  padding: 15px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  background-color: transparent;
+  transition: box-shadow var(--transition-duration) var(--timing-function);
+}
+
+.footer-input:placeholder-shown {
+  font-size: 16px;
+  line-height: 1.25;
+
+  color: var(--contacts-text-color);
+}
+
+.footer-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 200px;
+  height: 50px;
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  transition: box-shadow var(--transition-duration) var(--timing-function),
+    background-color var(--transition-duration) var(--timing-function);
+}
+
+.footer-btn:hover,
+.footer-btn:focus {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--accent-hover-color);
+}
+
+.footer-btn-text {
+  margin-right: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+
+  color: var(--primary-bg-white-color);
 }
