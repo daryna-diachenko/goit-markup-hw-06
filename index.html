@@ -41,7 +41,7 @@
               <a class="header-link link" href="./portfolio.html">Портфолио</a>
             </li>
             <li class="header-item">
-              <a class="header-link link" href="">Контакты</a>
+              <a class="header-link link" href="#footer">Контакты</a>
             </li>
           </ul>
         </nav>
@@ -79,7 +79,7 @@
       <section class="hero">
         <div class="container">
           <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-          <button class="hero-btn" type="button" data-modal-open>
+          <button class="btn hero-btn" type="button" data-modal-open>
             Заказать услугу
           </button>
         </div>
@@ -454,7 +454,7 @@
 
     <!-- ------------------------------Футер----------------------------- -->
 
-    <footer class="footer">
+    <footer class="footer" id="footer">
       <div class="footer-content container">
         <div class="footer-address">
           <a class="footer-logo logo link" href="./index.html" lang="en">
@@ -538,7 +538,7 @@
               />
             </label>
 
-            <button class="footer-btn" type="submit">
+            <button class="btn footer-btn" type="submit">
               <span class="footer-btn-text">Подписаться</span>
               <svg class="footer-icon" width="24" height="24">
                 <use href="./images/icons.svg#icon-send"></use>
@@ -553,12 +553,18 @@
 
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <p class="modal-heading">Оставьте свои данные, мы вам перезвоним</p>
-
         <form class="modal-form">
+          <p class="modal-heading">Оставьте свои данные, мы вам перезвоним</p>
+
           <label class="modal-field">
             <span class="modal-label">Имя</span>
-            <input class="modal-input" type="text" name="name" autofocus />
+            <input
+              class="modal-input"
+              type="text"
+              name="name"
+              autofocus
+              required
+            />
             <svg class="modal-input-icon" width="18" height="18">
               <use href="./images/icons.svg#icon-person"></use>
             </svg>
@@ -566,7 +572,7 @@
 
           <label class="modal-field">
             <span class="modal-label">Телефон</span>
-            <input class="modal-input" type="tel" name="tel" />
+            <input class="modal-input" type="tel" name="tel" required />
             <svg class="modal-input-icon" width="18" height="18">
               <use href="./images/icons.svg#icon-phone"></use>
             </svg>
@@ -574,7 +580,7 @@
 
           <label class="modal-field">
             <span class="modal-label">Почта</span>
-            <input class="modal-input" type="email" name="email" />
+            <input class="modal-input" type="email" name="email" required />
             <svg class="modal-input-icon" width="18" height="18">
               <use href="./images/icons.svg#icon-email"></use>
             </svg>
@@ -597,6 +603,7 @@
               type="checkbox"
               name="agreement"
               value="agree"
+              required
             />
             <svg class="modal-icon-check" width="16" height="15">
               <use href="./images/icons.svg#icon-check"></use>
@@ -607,12 +614,12 @@
             </span>
           </label>
 
-          <button class="modal-btn-submit" type="submit">
+          <button class="btn modal-btn-submit" type="submit">
             <span class="modal-btn-text">Отправить</span>
           </button>
         </form>
 
-        <button class="modal-btn" type="button" data-modal-close>
+        <button class="btn modal-btn" type="button" data-modal-close>
           <svg class="modal-icon" width="18" height="18">
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
